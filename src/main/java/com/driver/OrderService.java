@@ -43,4 +43,12 @@ public class OrderService {
     public List<String>  getAllOrders(){
         return orderRepository.getAllOrders();
     }
+
+    public Integer getCountOfUnassignedOrders(){
+        return orderRepository.getCountOfUnassignedOrders();
+    }
+
+    public void deleteOrderById(String orderId){
+        orderRepository.deleteOrderById(orderId);
+    }
 }

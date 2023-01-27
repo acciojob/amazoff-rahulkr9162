@@ -97,6 +97,7 @@ public class OrderController {
         Integer countOfOrders = 0;
 
         //Count of orders that have not been assigned to any DeliveryPartner
+        countOfOrders = orderService.getCountOfUnassignedOrders();
 
         return new ResponseEntity<>(countOfOrders, HttpStatus.CREATED);
     }
@@ -134,6 +135,7 @@ public class OrderController {
 
         //Delete an order and also
         // remove it from the assigned order of that partnerId
+        orderService.deleteOrderById(orderId);
 
         return new ResponseEntity<>(orderId + " removed successfully", HttpStatus.CREATED);
     }
